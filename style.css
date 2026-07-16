@@ -1,0 +1,313 @@
+/* ===========================
+   CONFIGURAÇÕES GERAIS
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#ffe4ec,#fff6f8);
+    overflow-x:hidden;
+    color:#444;
+}
+
+/* ===========================
+        TELA INICIAL
+=========================== */
+#inicio{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#ff8fab,#ffc2d1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.caixaInicio{
+    animation:aparecer 2s;
+}
+
+.caixaInicio h1{
+    font-size:90px;
+}
+
+.caixaInicio h2{
+    font-family:'Great Vibes',cursive;
+    font-size:70px;
+    color:#8b1e3f;
+    margin:20px 0;
+}
+
+.caixaInicio p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+#comecar{
+    background:#d6336c;
+    color:white;
+    border:none;
+    padding:18px 40px;
+    border-radius:40px;
+    font-size:20px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#comecar:hover{
+    transform:scale(1.08);
+    background:#b5174a;
+}
+
+/* ===========================
+       SEÇÕES
+=========================== */
+section{
+    padding:90px 8%;
+}
+
+/* ===========================
+      TEXTO
+=========================== */
+.texto{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.texto h2{
+    font-size:45px;
+    color:#b5174a;
+    margin-bottom:30px;
+    font-family:'Great Vibes';
+}
+
+#textoDigitando{
+    font-size:22px;
+    line-height:2;
+}
+
+/* ===========================
+      GALERIA
+=========================== */
+.galeria h2{
+    text-align:center;
+    font-size:50px;
+    color:#b5174a;
+    margin-bottom:70px;
+    font-family:'Great Vibes';
+}
+
+.fotos{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:50px;
+}
+
+/* ===========================
+      POLAROID
+=========================== */
+.polaroid{
+    width:260px;
+    background:white;
+    padding:15px 15px 50px;
+    border-radius:6px;
+    position:relative;
+    box-shadow:0 20px 35px rgba(0,0,0,.25);
+    transition:.5s;
+    cursor:pointer;
+}
+
+.polaroid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.polaroid p{
+    text-align:center;
+    margin-top:20px;
+    font-family:'Great Vibes';
+    font-size:28px;
+    color:#555;
+}
+
+.polaroid::before{
+    content:"📎";
+    position:absolute;
+    top:-20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:28px;
+}
+
+/* Fotos bem tortinhas */
+.polaroid:nth-child(1){ transform:rotate(-15deg); }
+.polaroid:nth-child(2){ transform:rotate(11deg); }
+.polaroid:nth-child(3){ transform:rotate(-10deg); }
+.polaroid:nth-child(4){ transform:rotate(15deg); }
+.polaroid:nth-child(5){ transform:rotate(-8deg); }
+
+.polaroid:hover{
+    transform:scale(1.1) rotate(0deg);
+    z-index:20;
+}
+
+/* ===========================
+       CARTA
+=========================== */
+.envelope{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:60px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.envelope h2{
+    text-align:center;
+    font-family:'Great Vibes';
+    font-size:50px;
+    color:#b5174a;
+    margin-bottom:30px;
+}
+
+.envelope p{
+    font-size:22px;
+    line-height:2;
+    text-align:center;
+}
+
+/* ===========================
+      CONTADOR
+=========================== */
+.contador{
+    text-align:center;
+}
+
+.contador h2{
+    font-size:45px;
+    color:#b5174a;
+    font-family:'Great Vibes';
+    margin-bottom:30px;
+}
+
+#contador{
+    font-size:35px;
+    font-weight:bold;
+}
+
+/* ===========================
+       FINAL
+=========================== */
+.final{
+    text-align:center;
+    background:#ffd6e0;
+}
+
+.final h2{
+    font-family:'Great Vibes';
+    font-size:60px;
+    color:#8b1e3f;
+}
+
+.final p{
+    font-size:25px;
+    margin:20px 0;
+}
+
+.final h1{
+    color:#d6336c;
+    font-size:80px;
+}
+
+/* ===========================
+      LIGHTBOX
+=========================== */
+#lightbox{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.92);
+    z-index:1002;
+}
+
+#imagemGrande{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+#fechar{
+    position:absolute;
+    top:20px;
+    right:40px;
+    font-size:60px;
+    color:white;
+    cursor:pointer;
+}
+
+/* ===========================
+  CHUVA DE CORAÇÕES
+=========================== */
+.coracao {
+    position: fixed;
+    top: -50px;
+    z-index: 999;
+    user-select: none;
+    pointer-events: none;
+    animation: cair linear forwards;
+}
+
+@keyframes cair {
+    to {
+        transform: translateY(105vh);
+    }
+}
+
+/* ===========================
+      ANIMAÇÕES GERAIS
+=========================== */
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+      CELULAR
+=========================== */
+@media(max-width:768px){
+    .caixaInicio h2{ font-size:45px; }
+    .caixaInicio p{ font-size:18px; }
+    .galeria h2, .contador h2, .envelope h2{ font-size:40px; }
+    .polaroid{
+        width:90%;
+        transform:none !important;
+    }
+    .polaroid img{ height:380px; }
+    .final h1{ font-size:50px; }
+    .final h2{ font-size:45px; }
+}
